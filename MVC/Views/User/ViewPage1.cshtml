@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script>
+        $(function () {
+            $("#submit").click(function () {
+                var userName = $("#userName").val();
+                var password = $("#password").val();
+                $.ajax({
+                    type:"post",
+                    url:"/User/Login",
+                    data:{UserName:userName,Password:password},
+                    dataType:"Json",
+                    success:function(data){
+                        alert(data.UserName);
+                        window.location.href = "/User/LoginSuccess?username="+data.UserName;
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <form method="post">
+            账号：<input id="userName" type="text" /><br /><br />
+            密码：<input id="password" type="password" /><br /><br />
+            <input id="submit" type="button" value="登录" /><br />
+
+        </form>
+        ---------------------
+        作者：Jasmine
+        来源：CSDN
+        版权声明：本文为博主原创文章，转载请附上博文链接！
+    </div>
+</body>
+</html>

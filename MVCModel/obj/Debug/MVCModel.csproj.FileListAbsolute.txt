@@ -1,0 +1,4 @@
+D:\project\test\MVC\MVCModel\bin\Debug\MVCModel.dll
+D:\project\test\MVC\MVCModel\bin\Debug\MVCModel.pdb
+D:\project\test\MVC\MVCModel\obj\Debug\MVCModel.dll
+D:\project\test\MVC\MVCModel\obj\Debug\MVCModel.pdb

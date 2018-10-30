@@ -1,0 +1,37 @@
+﻿@using MVCModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        1.这是Family Controler的页面的ViewBag传递的值：@(ViewBag.Title1)
+        2.this is viewData value:@ViewData["Title2"]
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.ID</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Address</td>
+                    <td>@Model.Phone</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

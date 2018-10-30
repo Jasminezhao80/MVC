@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script>
+        $(function(){
+            $("#submit").click(function () {
+                alert("submit click");
+                var userName=$("#userName").val();
+                var password = $("#password").val();
+                alert(userName);
+                //$.ajax({
+                //    type: "post",
+                //    url: "/User/Login",
+                //    data: { Name: userName, Password: password },
+                //    dataType: "json",
+                //    async:false,
+                //    success: function (data) {
+                //        alert(data);
+                //        alert(data.Name);
+                //        window.location.href = "/User/LoginSuccess?userName=" + data.Name;
+                //    }
+                //});
+                $.post("/User/Login", { "userName": userName, "password": password },
+                    function (data) {
+                    alert(data.Name);
+                    window.location.href = "/User/LoginSuccess?userName=" + data.Name;
+                    }, "json")
+        });
+        });
+    </script>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            账号：<input id="userName" type="text" /><br /><br />
+            密码：<input id="password" type="password" /><br /><br />
+            <input id="submit" type="button" value="登录" /><br />
+
+        </form>
+
+    </div>
+</body>
+</html>
